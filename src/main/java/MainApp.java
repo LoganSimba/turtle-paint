@@ -23,6 +23,7 @@ public class MainApp {
         turtle.setColor(Color.GREEN);
         //call the method
         drawSquare(turtle, -50, -50, 100);
+        drawTriangle(turtle, -50,-50, 100);
     }
 
         //method to draw a square
@@ -37,5 +38,18 @@ public class MainApp {
                 turtle.turnRight(90);
             }
         }
+    //method to draw the triangle
+    public static void drawTriangle(Turtle turtle, int x, int y, int size)
+    {
+        turtle.penUp();
+        turtle.goTo(x, y);
+        turtle.penDown();
+        //iterate and get an angle that will draw a triangle
+        for (int i = 0; i < 3; i++)
+        {
+            turtle.forward(size);
+            turtle.turnRight(120);
+        }
+    }
 }
 
