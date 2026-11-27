@@ -24,6 +24,7 @@ public class MainApp {
         //call the method
         drawSquare(turtle, -50, -50, 100);
         drawTriangle(turtle, -50,-50, 100);
+        drawCircle(turtle, -20, 20, 30);
     }
 
         //method to draw a square
@@ -51,5 +52,20 @@ public class MainApp {
             turtle.turnRight(120);
         }
     }
-}
+    //method to draw a circle
+    public static void drawCircle(Turtle turtle, int x, int y, int radius)
+    {
+        turtle.penUp();
+        turtle.goTo(x, y);
+        turtle.penDown();
+        //calculating the circumference
+        double circumference = 2 * Math.PI * radius;
+        double step = circumference / 360;
+
+        for (int i = 0; i < 360; i++)
+        {
+            turtle.forward(step);
+            turtle.turnRight(1);
+        }
+}}
 
